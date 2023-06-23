@@ -15,15 +15,19 @@ police.
 we can tell this is a dynamic programming problem because we can 
 achieve our final answer by building upon previous answers, the max 
 amount of money we can steal from n houses relies upon the max 
-amount of money we can steal from n - 1 houses, and on and on until 1 house. Now that we know it is a dynamimc program we simply need to
+amount of money we can steal from n - 1 houses, and on and on until 1 house. 
+Now that we know it is a dynamimc program we simply need to
 find our base case and our recursive step. The base case is trivial.
 If we only have 1 house on the street, then obviously the most money 
 will be obtained by robbing that one house. If we have two houses on
 the street and can only rob one, we rob the one with more money
 inside. Our recursive case is as follows: imagine we have a street
-with n houses and have already calculated the most amount of money we could get by robbing from only the set of the first house, and the 
-first two houses, and on and on until we have calculated the max value returned by robbing from the set of the first n - 1 houses. Now,
-we try and find the solution for the set of all n houses. What we can see is that either, our solution for the n - 1 houses stands OR that
+with n houses and have already calculated the most amount of money we could get 
+by robbing from only the set of the first house, and the 
+first two houses, and on and on until we have calculated the max value returned
+by robbing from the set of the first n - 1 houses. Now,
+we try and find the solution for the set of all n houses. What we can see is that either,
+our solution for the n - 1 houses stands OR that
 more money can be obtained by robbing the nth house and skipping the
 n - 1th house. Leaving us with the recursive equation:
 rob(n) = Max(rob(n - 1), rob(n - 2) + val(n)) and solving our problem!
